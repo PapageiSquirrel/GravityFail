@@ -1,0 +1,99 @@
+{
+	"cadran":
+	{
+		"nb": 6
+	},
+	"coeff":
+	{
+		"spawn": 10,
+		"nb": 1,
+		"vitesse": 3
+	},
+	"duree":
+	{
+		
+	},
+	"item_list": ["etoile", "asteroideA", "asteroideB", "asteroideNOIR"],
+	"sprites":
+	{
+		"fond":
+		{
+			"images": ["fondJeu"],
+			"size": {"w": 1, "h": 1}
+		},
+		"heros":
+		{
+			"images": ["astro", "astroTir"],
+			"animations": {"stand": {"frames": 0}, "shoot": {"frames": 1, "next": "stand"}},
+			"framerate": 3,
+			"size": {"w": 0.16, "h": 0.16},
+			"vitesse": 2
+		},
+		"etoile": 
+		{
+			"images": ["etoile"],
+			"size": {"w": 0.1, "h": 0.05},
+			"type": "etoile", 
+			"pts": [{"x": 72, "y": 12}, {"x": 16, "y": 40}, {"x": 116, "y": 60}, {"x": 12, "y": 100}, {"x": 84, "y": 112}], 
+			"vitesse": 1, 
+			"prob": 0.005, 
+			"lim": 1
+		},
+		"asteroideA":
+		{
+			"images": ["asteroideA1", "asteroideA2", "asteroideA3", "asteroideA4"],
+			"animations": {"intact": {"frames": 0}, "hit": {"frames": [1,2,3], "next": "destroyed"}, "destroyed": {"frames": 3}},
+			"framerate": 6,
+			"size": {"w": 0.5, "h": 0.25},
+			"type": "asteroide", 
+			"dest": 2,
+			"pts": [{"x": 265, "y": 107}, {"x": 287, "y": 171}, {"x": 199, "y": 263}, {"x": 155, "y": 321}], 
+			"vitesse": 1, 
+			"prob": 0.2, 
+			"lim": 0
+		},
+		"asteroideB":
+		{
+			"images": ["asteroideB1", "asteroideB2", "asteroideB3"],
+			"animations": {"intact": {"frames": 0}, "hit": {"frames": [1,2], "next": "destroyed"}, "destroyed": {"frames": 3}},
+			"framerate": 6,
+			"size": {"w": 0.25, "h": 0.125},
+			"type": "asteroide", 
+			"dest": 1,
+			"pts": [{"x": 170, "y": 160}, {"x": 95, "y": 220}, {"x": 254, "y": 220}, {"x": 170, "y": 280}], 
+			"vitesse": 2, 
+			"prob": 0.2, 
+			"lim": 0
+		},
+		"asteroideNOIR":
+		{
+			"images": ["asteroideNOIR1"],
+			"size": {"w": 0.25, "h": 0.125},
+			"type": "asteroide", 
+			"pts": [{"x": 75, "y": 75},	{"x": 75, "y": 175}, {"x": 175, "y": 75}, {"x": 175, "y": 175}], 
+			"vitesse": 1, 
+			"prob": 0.1, 
+			"lim": 0
+		},
+		"meteore":
+		{
+			"images": ["meteore"],
+			"size": {"w": 0.125, "h": 0.3},
+			"type": "asteroide", 
+			"pts": [{"x": 12, "y": 112}], 
+			"vitesse": 1, 
+			"prob": 0, 
+			"lim": 0
+		},
+		"tir":
+		{
+			"images": ["tir1", "tir2"],
+			"animations": {"fire": {"frames": 0, "next": "travel"}, "travel": {"frames": 1}},
+			"framerate": 10,
+			"size": {"w": 0.05, "h": 0.05},
+			"type": "tir", 
+			"pts": [{"x": 21, "y": 80}], 
+			"vitesse": 1.5
+		}
+	}
+}
